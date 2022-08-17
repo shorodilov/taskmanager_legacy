@@ -1,4 +1,5 @@
 <!doctype html>
+{# todo: extend from base template #}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +8,7 @@
   <title>Task List | Task Manager</title>
 </head>
 <body>
-
+{# todo: move to a separate template #}
 <nav>
   <ul>
     <li><a href="/">Task List</a></li>
@@ -18,9 +19,11 @@
   <h1>Task List</h1>
   <hr>
   <ul>
-    <li><a href="/1/">Task 1</a></li>
-    <li><a href="/2/">Task 2</a></li>
-    <li><a href="/3/">Task 3</a></li>
+    {% for object in object_list %}
+      <li>
+        <a href="{% url "task:detail" object.task_id %}">{{ object.title }}</a>
+      </li>
+    {% endfor %}
   </ul>
 </div>
 
