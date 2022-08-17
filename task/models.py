@@ -3,6 +3,7 @@ Task application models
 
 """
 
+from django.conf import settings
 from django.db import models
 
 
@@ -158,6 +159,18 @@ class TaskModel(models.Model):
     tag = models.ManyToManyField(
         TaskTagModel,
         verbose_name="related tags"
+    )
+
+    reporter = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.SET_DEFAULT, default=0,
+        verbose_name="reporter",
+        related_name="reported_tasks"
+    )
+    assignee = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.SET(0),
+        null=True, blank=True,
+        verbose_name="assignee",
+        related_name="assigned_tasks"
     )
 
     def __repr__(self) -> str:
