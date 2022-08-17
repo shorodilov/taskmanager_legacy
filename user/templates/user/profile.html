@@ -11,6 +11,22 @@
         <span>{{ user.first_name }}</span>&nbsp;
         <span>{{ user.last_name }}</span>
       </div>
+      <div id="change-user-data">
+        <form action="{% url "user:change" %}" method="post">
+          {% csrf_token %}
+          {{ user_change_form.as_div }}
+          <button type="submit">Change</button>
+          <button type="reset">Cancel</button>
+        </form>
+      </div>
+      <div id="change-user-pass">
+        <form action="{% url "user:change-password" %}" method="post">
+          {% csrf_token %}
+          {{ password_change_form.as_div }}
+          <button type="submit">Submit password change</button>
+          <button type="reset">Cancel</button>
+        </form>
+      </div>
     </div>
   </div>
 {% endblock %}
