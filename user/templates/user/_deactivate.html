@@ -1,0 +1,22 @@
+<button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#deactivate-account">
+  Deactivate account
+</button>
+<div id="deactivate-account" class="modal fade" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <div class="modal-title">Are you sure you want to deactivate {{ user.username }} account?</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form action="" method="post">
+          {% csrf_token %}
+          <button class="btn btn-primary" type="submit" disabled>Deactivate Account</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

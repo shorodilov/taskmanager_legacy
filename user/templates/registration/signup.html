@@ -1,12 +1,17 @@
 {% extends "base.html" %}
-{% block title %}Sign In | {{ block.super }}{% endblock %}
+{% load crispy_forms_filters %}
+{% block title %}Sign Up | {{ block.super }}{% endblock %}
 {% block container %}
-  <form method="post">
+  <form method="post" class="col-4 offset-4">
     {% csrf_token %}
-    {{ form.as_div }}
-    <button type="submit">Sign Up</button>
-    <div>
-      Already have an account?<a href="{% url "user:signin" %}">Sign in!</a>
+    {{ form|crispy }}
+    <div class="form-row">
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+      <a href="{% url "task:list" %}" class="btn btn-danger">Cancel</a>
+    </div>
+    <div class="form-row mt-3">
+      <span>Already have an account? </span>
+      <a href="{% url "user:signin" %}">Sign in.</a>
     </div>
   </form>
 {% endblock %}
