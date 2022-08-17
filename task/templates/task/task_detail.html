@@ -11,4 +11,8 @@
   <div>
     {{ object.description|linebreaks }}
   </div>
+  <div style="display:flex">
+    <div style="margin-left: 10%"><a href="{% url "task:update" object.pk %}">Update</a></div>
+    <div style="margin-left: 10%"><a href="{% url "task:delete" object.pk %}">Delete</a></div>
+  </div>
 {% endblock %}

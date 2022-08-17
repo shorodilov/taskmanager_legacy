@@ -3,25 +3,32 @@
 {% block container %}
   <h1>Task List</h1>
   <hr>
-  <ul>
-    {% for object in object_list %}
-      <li style="margin-top: 20px">
-        <div>
-          {% if object.completed %}
-            <input type="checkbox" disabled checked>
-          {% else %}
-            <input type="checkbox" disabled>
-          {% endif %}
-          <a href="{% url "task:detail" object.pk %}">{{ object.title }}</a>
-          <p>{{ object.description|truncatewords:10 }}</p>
-        </div>
-        <div class="tags-container">
-          <b>Tags: </b>
-          {% for tag in object.tag.all %}
-            <span>{{ tag }}</span>
-          {% endfor %}
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
+  <div style="display:flex">
+    <div style="width: 70%">
+      <ul>
+        {% for object in object_list %}
+          <li style="margin-top: 20px">
+            <div>
+              {% if object.completed %}
+                <input type="checkbox" disabled checked>
+              {% else %}
+                <input type="checkbox" disabled>
+              {% endif %}
+              <a href="{% url "task:detail" object.pk %}">{{ object.title }}</a>
+              <p>{{ object.description|truncatewords:10 }}</p>
+            </div>
+            <div class="tags-container">
+              <b>Tags: </b>
+              {% for tag in object.tag.all %}
+                <span>{{ tag }}</span>
+              {% endfor %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <a href="{% url "task:create" %}">Create</a>
+    </div>
+  </div>
 {% endblock %}
