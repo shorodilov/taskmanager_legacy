@@ -1,9 +1,27 @@
 {% extends "base.html" %}
 {% block title %}Task Detail | {{ block.super }}{% endblock %}
 {% block container %}
-  <p>Task id: {{ object.task_id }}</p>
-  <p>{{ object.title }}</p>
+  <div>
+    <h2>{{ object.title }}</h2>
+  </div>
   {% if object.completed %}
-    <p style="color: green">this task is completed</p>
+    <div style="color: green">this task is completed</div>
   {% endif %}
+  <div>
+    <div>
+      <span>Reporter: </span>
+      <span>{{ object.reporter.first_name }} {{ object.reporter.last_name }}</span>
+    </div>
+    <div>
+      <span>Assignee: </span>
+      <span>{{ object.assignee.first_name }} {{ object.assignee.last_name }}</span>
+    </div>
+  </div>
+  <div>
+    {{ object.description|linebreaks }}
+  </div>
+  <div style="display:flex">
+    <div style="margin-left: 10%"><a href="{% url "task:update" object.pk %}">Update</a></div>
+    <div style="margin-left: 10%"><a href="{% url "task:delete" object.pk %}">Delete</a></div>
+  </div>
 {% endblock %}

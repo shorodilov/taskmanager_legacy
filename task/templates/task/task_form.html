@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Task Form | {{ block.super }}{% endblock %}
+{% block container %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <button type="submit">Save</button>
+    <a href="{% url "task:list" %}">Cancel</a>
+  </form>
+{% endblock %}

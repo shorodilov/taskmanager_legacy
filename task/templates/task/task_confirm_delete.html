@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Delete Task | {{ block.super }}{% endblock %}
+{% block container %}
+  <form method="post">
+    {% csrf_token %}
+    <div>You are deleting {{ object.title }}?</div>
+    <div>Do you confirm?</div>
+    <button type="submit">Delete</button>
+    <a href="{% url "task:detail" object.pk %}">Cancel</a>
+  </form>
+{% endblock %}
