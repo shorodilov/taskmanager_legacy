@@ -13,4 +13,4 @@ class TaskForm(forms.ModelForm):
 
     class Meta:
         model = TaskModel
-        fields = "title", "project", "description"
+        fields = "title", "project", "description", "assignee"

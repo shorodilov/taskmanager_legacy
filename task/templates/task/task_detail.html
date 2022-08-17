@@ -2,12 +2,21 @@
 {% block title %}Task Detail | {{ block.super }}{% endblock %}
 {% block container %}
   <div>
-    <span>Task id: {{ object.task_id }}</span>
-    <span>{{ object.title }}</span>
+    <h2>{{ object.title }}</h2>
   </div>
   {% if object.completed %}
     <div style="color: green">this task is completed</div>
   {% endif %}
+  <div>
+    <div>
+      <span>Reporter: </span>
+      <span>{{ object.reporter.first_name }} {{ object.reporter.last_name }}</span>
+    </div>
+    <div>
+      <span>Assignee: </span>
+      <span>{{ object.assignee.first_name }} {{ object.assignee.last_name }}</span>
+    </div>
+  </div>
   <div>
     {{ object.description|linebreaks }}
   </div>

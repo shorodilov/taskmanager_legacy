@@ -3,6 +3,7 @@ Task application views
 
 """
 
+from django.contrib.auth.decorators import login_required
 from django.http import (
     Http404,
     HttpRequest,
@@ -10,7 +11,7 @@ from django.http import (
     HttpResponseRedirect
 )
 from django.shortcuts import render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views.decorators.http import require_http_methods
 
 from task.forms import TaskForm
@@ -35,12 +36,14 @@ def task_detail_view(request: HttpRequest, pk: int) -> HttpResponse:
 
 
 @require_http_methods(["GET", "POST"])
+@login_required(login_url=reverse_lazy("user:signin"))
 def task_create_view(request: HttpRequest) -> HttpResponse:
     """Task create view implementation"""
 
     if request.method == "POST":
         form = TaskForm(request.POST)
         if form.is_valid():
+            form.instance.reporter = request.user
             form.save()
             redirect_url = reverse("task:detail", args=(form.instance.pk,))
 
