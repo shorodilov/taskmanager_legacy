@@ -10,6 +10,7 @@ from task.models import ProjectModel, TaskModel, TaskTagModel
 
 @admin.display(description="tasks count")
 def tasks_count(obj: ProjectModel | TaskTagModel) -> int:
+    # noinspection PyUnresolvedReferences
     return obj.tasks.count()
 
 
@@ -28,7 +29,7 @@ class TaskTagModelAdmin(admin.ModelAdmin):
 
 @admin.register(TaskModel)
 class TaskModelAdmin(admin.ModelAdmin):
-    list_display = "title", "created_at", "updated_at"
+    list_display = "title", "created_at", "updated_at", "completed"
     list_display_links = "title",
     ordering = "project", "title"
-    list_filter = "project", "tag"
+    list_filter = "project", "completed", "tag"

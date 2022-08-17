@@ -22,6 +22,11 @@ class ProjectModel(models.Model):
 
     """
 
+    class Meta:
+        db_table = "project"
+        verbose_name = "project"
+        verbose_name_plural = "projects"
+
     title = models.CharField(
         max_length=32,
         verbose_name="project title",
@@ -60,6 +65,12 @@ class TaskTagModel(models.Model):
     :type name: str
 
     """
+
+    class Meta:
+        db_table = "tag"
+        verbose_name = "task tag"
+        verbose_name_plural = "task tags"
+        default_related_name = "tags"
 
     name = models.CharField(
         max_length=16,
@@ -108,6 +119,14 @@ class TaskModel(models.Model):
 
     """
 
+    class Meta:
+        db_table = "task"
+        verbose_name = "task"
+        verbose_name_plural = "tasks"
+        ordering = "updated_at", "project", "title"
+        get_latest_by = "created_at"
+        default_related_name = "tasks"
+
     created_at = models.DateTimeField(
         auto_now_add=True,
         editable=False  # prevents this fields for being displayed on forms
@@ -126,16 +145,18 @@ class TaskModel(models.Model):
         blank=True,
         verbose_name="task detail description"
     )
+    completed = models.BooleanField(
+        default=False,
+        verbose_name="tasks completed status"
+    )
 
     # relationship
     project = models.ForeignKey(
         ProjectModel, on_delete=models.CASCADE,
-        related_name="tasks",
         verbose_name="related project"
     )
     tag = models.ManyToManyField(
         TaskTagModel,
-        related_name="tasks",
         verbose_name="related tags"
     )
 
