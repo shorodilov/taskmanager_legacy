@@ -3,8 +3,12 @@ Task application views
 
 """
 
-from django.http import Http404, HttpRequest, HttpResponse, \
+from django.http import (
+    Http404,
+    HttpRequest,
+    HttpResponse,
     HttpResponseRedirect
+)
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.decorators.http import require_http_methods
