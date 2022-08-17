@@ -1,4 +1,5 @@
 <!doctype html>
+{# todo: extend from base template #}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,15 +9,19 @@
 </head>
 <body>
 
+{# todo: move to a separate template #}
 <nav>
   <ul>
-    <li><a href="/">Task List</a></li>
+    <li><a href={% url "task:list" %}>Task List</a></li>
   </ul>
 </nav>
 
 <div class="container">
-  <p>Task id: {{ task_id }}</p>
-  <p>Task detail view</p>
+  <p>Task id: {{ object.task_id }}</p>
+  <p>{{ object.title }}</p>
+  {% if object.completed %}
+    <p style="color: green">this task is completed</p>
+  {% endif %}
 </div>
 
 </body>
