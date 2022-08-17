@@ -2,6 +2,7 @@
 User application views
 
 """
+
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
@@ -9,7 +10,7 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.decorators.http import require_http_methods
 
-from user.forms import UserSignInForm
+from user.forms import UserSignInForm, UserSignUpForm
 
 
 @login_required(login_url=reverse_lazy("user:signin"))
@@ -19,10 +20,21 @@ def user_detail_view(request: HttpRequest) -> HttpResponse:
     return render(request, "user/profile.html")
 
 
+@require_http_methods(["GET", "POST"])
 def signup_view(request: HttpRequest) -> HttpResponse:
     """User signup (registration) view"""
 
-    raise NotImplementedError()
+    if request.method == "POST":
+        form = UserSignUpForm(request.POST)
+        if form.is_valid():
+            form.create_user()
+
+            return HttpResponseRedirect(reverse("user:signin"))
+
+    else:
+        form = UserSignUpForm()
+
+    return render(request, "registration/signup.html", {"form": form})
 
 
 @require_http_methods(["GET", "POST"])
