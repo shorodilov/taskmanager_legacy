@@ -1,27 +1,36 @@
-<nav>
-  <ul>
-    <li>
-      <a href="{% url "task:list" %}">Task List</a>
-    </li>
-    {% if user.is_authenticated %}
-      <li>
-        <a href="{% url "user:profile" %}">Profile</a>
-      </li>
-      <li>
-        <a href="{% url "user:logout" %}">Logout</a>
-      </li>
-    {% else %}
-      <li>
-        <a href="{% url "user:signin" %}">Sign In</a>
-      </li>
-      <li>
-        <a href="{% url "user:signup" %}">Sign Up</a>
-      </li>
-    {% endif %}
-    {% if user.is_staff %}
-      <li>
-        <a href="{% url "admin:index" %}">Admin Site</a>
-      </li>
-    {% endif %}
-  </ul>
+<nav class="navbar navbar-dark navbar-expand-sm bg-dark fixed-top" style="height: 4rem">
+  <div class="container">
+    <a href="{% url "task:list" %}" class="navbar-brand"><i class="fas fa-tasks"></i> &nbsp;Task Manager</a>
+
+    {# todo: check navbar toggle button #}
+    <button class="navbar-toggler" data-target="#navbarCollapse" data-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        {% if user.is_staff %}
+          <li class="nav-item ms-2">
+            <a href="{% url "admin:index" %}" class="nav-link">Administration</a>
+          </li>
+        {% endif %}
+        {% if user.is_authenticated %}
+          <li class="nav-item ms-2">
+            <a href="{% url "user:profile" %}" class="nav-link">Profile</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a href="{% url "user:logout" %}" class="nav-link">Logout</a>
+          </li>
+        {% else %}
+          <li class="nav-item ms-2">
+            <a href="{% url "user:signin" %}" class="nav-link btn btn-outline-primary">Sign In</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a href="{% url "user:signup" %}" class="nav-link btn btn-outline-primary">Sign Up</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+
+  </div>
 </nav>
