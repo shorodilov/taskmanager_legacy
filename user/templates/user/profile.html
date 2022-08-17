@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}User Profile | {{ block.super }}{% endblock %}
+{% block container %}
+  <div class="row" style="display: flex">
+    <div class="col" style="width: 50%; align-content: center; justify-content: center; text-align: center">
+      <img src="https://ui-avatars.com/api/?background=0D8ABC&color=fff" alt="avatar" width="250" height="250">
+    </div>
+    <div class="col" style="width: 50%">
+      <div>{{ user.username }}</div>
+      <div>
+        <span>{{ user.first_name }}</span>&nbsp;
+        <span>{{ user.last_name }}</span>
+      </div>
+    </div>
+  </div>
+{% endblock %}
