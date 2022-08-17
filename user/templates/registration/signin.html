@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Sign In | {{ block.super }}{% endblock %}
+{% block container %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <button type="submit">Sign In</button>
+    <div>
+      Have no account?<a href="{% url "user:signup" %}">Sign up now!</a>
+    </div>
+  </form>
+{% endblock %}
