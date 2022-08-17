@@ -1,28 +1,9 @@
-<!doctype html>
-{# todo: extend from base template #}
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Task Detail | Task Manager</title>
-</head>
-<body>
-
-{# todo: move to a separate template #}
-<nav>
-  <ul>
-    <li><a href={% url "task:list" %}>Task List</a></li>
-  </ul>
-</nav>
-
-<div class="container">
+{% extends "base.html" %}
+{% block title %}Task Detail | {{ block.super }}{% endblock %}
+{% block container %}
   <p>Task id: {{ object.task_id }}</p>
   <p>{{ object.title }}</p>
   {% if object.completed %}
     <p style="color: green">this task is completed</p>
   {% endif %}
-</div>
-
-</body>
-</html>
+{% endblock %}
