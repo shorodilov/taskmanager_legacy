@@ -75,4 +75,15 @@ def task_update_view(request: HttpRequest, pk: int) -> HttpResponse:
 def task_delete_view(request: HttpRequest, pk: int) -> HttpResponse:
     """Task delete view implementation"""
 
-    raise NotImplementedError()
+    try:
+        ctx = {"object": TaskModel.objects.get(pk=pk)}
+    except TaskModel.DoesNotExist:
+        raise Http404("Task not found")
+
+    if request.method == "POST":
+        ctx["object"].delete()
+
+        return HttpResponseRedirect(reverse("task:list"))
+
+    else:
+        return render(request, "task/task_confirm_delete.html", ctx)
