@@ -72,7 +72,7 @@ class TaskTagModel(models.Model):
         verbose_name_plural = "task tags"
         default_related_name = "tags"
 
-    name = models.CharField(
+    name = models.SlugField(
         max_length=16,
         unique=True,
         verbose_name="tag name",
