@@ -1,5 +1,22 @@
 <nav>
   <ul>
-    <li><a href="/">Task List</a></li>
+    <li>
+      <a href="{% url "task:list" %}">Task List</a>
+    </li>
+    {% if user.is_authenticated %}
+      <li>
+        <a href="{% url "user:profile" %}">Profile</a>
+      </li>
+      <li>
+        <a href="{% url "user:logout" %}">Logout</a>
+      </li>
+    {% else %}
+      <li>
+        <a href="{% url "user:signin" %}">Sign In</a>
+      </li>
+      <li>
+        <a href="{% url "user:signup" %}">Sign Up</a>
+      </li>
+    {% endif %}
   </ul>
 </nav>
