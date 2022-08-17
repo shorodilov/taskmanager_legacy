@@ -1,0 +1,92 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$zUXx4T6Nts1UJce4eOfibh$xVQiigHyUV1plqAGZDSVAWAL75pGo47Lvxg3fLZa05Y=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-08-02T13:35:33.799Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$0zx0sAT1WWBaLNjeXBATfv$V5AAHEESamE7wkImyu6SPLDoYKggdaZJh6ggWssvK6Y=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Countim",
+      "first_name": "Malva",
+      "last_name": "Chubb-Baggins",
+      "email": "MalvaChubb-Baggins@jourrapide.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-08-02T13:35:33.799Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$LhFrRuqt2yn7TNt9kfcQnS$jIi2sjB9zuUiowygIePrft2qYuGtlVsm0nQjBayP/YM=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Plithenewark",
+      "first_name": "Marmadoc",
+      "last_name": "Brockhouse",
+      "email": "MarmadocBrockhouse@armyspy.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-08-02T13:35:33.799Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$nMosUkRHgClYZMnZ6imMxd$MMZe0+y9IfvEylRAI0RIwDQ8abnhCztNKRDV8gBNIrc=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Spable",
+      "first_name": "Berylla",
+      "last_name": "Twofoot",
+      "email": "BeryllaTwofoot@armyspy.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-08-02T13:35:33.799Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$mn4kEgmEoQlJmmhVWaBBqu$L/poD2U8dYiOnLmq2MlfbFheewRuj8ekbmLxboq1pHo=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Himplazint1996",
+      "first_name": "Bosco",
+      "last_name": "Longhole",
+      "email": "BoscoLonghole@teleworm.us",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-08-02T13:35:33.799Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

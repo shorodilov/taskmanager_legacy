@@ -68,3 +68,42 @@ See the table of variables used within this project below.
 |                            | separately. Here is a good service to get it:  |
 |                            | https://djecrety.ir/                           |
 +----------------------------+------------------------------------------------+
+
+Fixtures
+========
+
+This project comes with some initial data you may use while development or
+testing. To load initial data for development needs apply Django migrations
+first. After that load data from the fixture file.
+
+.. code-block::
+
+    python manage.py migrate
+    python manage.py loaddata {fixture_name} [path/to/fixture/file]
+
+Fixtures list is:
+
+* users
+
+Initial users fixture
+---------------------
+
+You can use following credentials after loading "users" fixture. It was
+generated using the `fake names generator`_. It's useful to play around
+with admin site and authentication system.
+
++----------------+-------------+--------------+
+| username       | password    | is superuser |
++================+=============+==============+
+| admin          | admin       | true         |
++----------------+-------------+--------------+
+| Himplazint1996 | teef1Ovo0Sh | false        |
++----------------+-------------+--------------+
+| Spable         | Niege9Aepei | false        |
++----------------+-------------+--------------+
+| Plithenewark   | agh8fe0Thaa | false        |
++----------------+-------------+--------------+
+| Countim        | chaet2Ech   | false        |
++----------------+-------------+--------------+
+
+.. _fake names generator: https://www.fakenamegenerator.com/
