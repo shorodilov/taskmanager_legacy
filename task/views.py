@@ -56,6 +56,7 @@ def task_create_view(request: HttpRequest) -> HttpResponse:
 
 
 @require_http_methods(["GET", "POST"])
+@login_required(login_url=reverse_lazy("user:signin"))
 def task_update_view(request: HttpRequest, pk: int) -> HttpResponse:
     """Task update view implementation"""
 
@@ -79,6 +80,7 @@ def task_update_view(request: HttpRequest, pk: int) -> HttpResponse:
 
 
 @require_http_methods(["GET", "POST"])
+@login_required(login_url=reverse_lazy("user:signin"))
 def task_delete_view(request: HttpRequest, pk: int) -> HttpResponse:
     """Task delete view implementation"""
 
