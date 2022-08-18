@@ -1,34 +1,18 @@
 {% extends "base.html" %}
 {% block title %}Task List | {{ block.super }}{% endblock %}
 {% block container %}
-  <h1>Task List</h1>
-  <hr>
-  <div style="display:flex">
-    <div style="width: 70%">
-      <ul>
-        {% for object in object_list %}
-          <li style="margin-top: 20px">
-            <div>
-              {% if object.completed %}
-                <input type="checkbox" disabled checked>
-              {% else %}
-                <input type="checkbox" disabled>
-              {% endif %}
-              <a href="{% url "task:detail" object.pk %}">{{ object.title }}</a>
-              <p>{{ object.description|truncatewords:10 }}</p>
-            </div>
-            <div class="tags-container">
-              <b>Tags: </b>
-              {% for tag in object.tag.all %}
-                <span>{{ tag }}</span>
-              {% endfor %}
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div>
-      <a href="{% url "task:create" %}">Create</a>
-    </div>
+  <div class="list-group">
+    {% for object in object_list %}
+      <a href="{% url  "task:detail" object.pk %}" class="list-group-item">
+        <div class="task-container" id="task-id-{{ object.pk }}">
+          <div class="task-header">
+            <h4 class="task-title">{{ object.title }}</h4>
+          </div>
+          <div class="task-body">
+            <p>{{ object.description|truncatewords:10 }}</p>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
   </div>
 {% endblock %}
