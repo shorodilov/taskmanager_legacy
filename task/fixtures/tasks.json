@@ -1,0 +1,77 @@
+[
+  {
+    "model": "task.TaskModel",
+    "pk": 1,
+    "fields": {
+      "assignee": null,
+      "completed": false,
+      "created_at": "2022-08-02T13:35:33.799Z",
+      "description": "Ah, faith! Jolly roger, yer not crushing me without a fight! God, real death!",
+      "project": 1,
+      "reporter": 3,
+      "tag": [],
+      "title": "test task #1",
+      "updated_at": "2022-08-02T13:35:33.799Z"
+    }
+  },
+  {
+    "model": "task.TaskModel",
+    "pk": 2,
+    "fields": {
+      "assignee": 2,
+      "completed": false,
+      "created_at": "2022-08-02T13:35:33.799Z",
+      "description": null,
+      "project": 2,
+      "reporter": 2,
+      "tag": [],
+      "title": "test task #2",
+      "updated_at": "2022-08-02T13:35:33.799Z"
+    }
+  },
+  {
+    "model": "task.TaskModel",
+    "pk": 3,
+    "fields": {
+      "assignee": 3,
+      "completed": false,
+      "created_at": "2022-08-02T13:35:33.799Z",
+      "description": null,
+      "project": 1,
+      "reporter": 3,
+      "tag": [],
+      "title": "test task #2",
+      "updated_at": "2022-08-02T13:35:33.799Z"
+    }
+  },
+  {
+    "model": "task.TaskModel",
+    "pk": 4,
+    "fields": {
+      "assignee": 2,
+      "completed": false,
+      "created_at": "2022-08-02T13:35:33.799Z",
+      "description": null,
+      "project": 1,
+      "reporter": 2,
+      "tag": [],
+      "title": "test task #2",
+      "updated_at": "2022-08-02T13:35:33.799Z"
+    }
+  },
+  {
+    "model": "task.TaskModel",
+    "pk": 5,
+    "fields": {
+      "assignee": 2,
+      "completed": false,
+      "created_at": "2022-08-02T13:35:33.799Z",
+      "description": null,
+      "project": 1,
+      "reporter": 2,
+      "tag": [],
+      "title": "test task #2",
+      "updated_at": "2022-08-02T13:35:33.799Z"
+    }
+  }
+]

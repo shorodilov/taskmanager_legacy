@@ -162,12 +162,13 @@ class TaskModel(models.Model):
     )
 
     reporter = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.SET_DEFAULT, default=0,
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
+        null=True,
         verbose_name="reporter",
         related_name="reported_tasks"
     )
     assignee = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.SET(0),
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
         null=True, blank=True,
         verbose_name="assignee",
         related_name="assigned_tasks"

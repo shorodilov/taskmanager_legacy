@@ -83,7 +83,12 @@ first. After that load data from the fixture file.
 
 Fixtures list is:
 
-* users
+#. users
+#. projects
+#. tasks
+
+.. note:: Fixtures are ordered. Each next fixture requires the previous one
+          being loaded to the database.
 
 Initial users fixture
 ---------------------
