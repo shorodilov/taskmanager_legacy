@@ -1,0 +1,5 @@
+{% if user %}
+  <span>{{ user.first_name|default:"Unnamed" }}&nbsp;{{ user.last_name }}</span>
+{% else %}
+  <span class="text-muted">Unknown User</span>
+{% endif %}

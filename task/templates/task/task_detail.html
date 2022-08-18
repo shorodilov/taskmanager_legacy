@@ -2,14 +2,23 @@
 {% block title %}Task Detail | {{ block.super }}{% endblock %}
 {% block container %}
   <div class="row">
-    <div class="col-12">
-      <h1>{{ object.title }}</h1>
+    <div class="col">
+      <h2>{{ object.title }}</h2>
+      <hr>
     </div>
+  </div>
+  <div class="row">
+    <div class="col offset-10">
+      <a href="{% url "task:update" object.pk %}" class="btn btn-primary">Update</a>
+      <a href="{% url "task:delete" object.pk %}" class="btn btn-danger">Delete</a>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-3" id="metadata">
-      {# todo: include task metadata here #}
+      {% include "task/_task_meta.html" with task=object %}
     </div>
     <div class="col" id="data">
-      {# todo: include task data here #}
+      {% include "task/_task_data.html" with task=object %}
     </div>
   </div>
 {% endblock %}
