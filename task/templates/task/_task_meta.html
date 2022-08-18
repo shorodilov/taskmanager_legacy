@@ -1,0 +1,20 @@
+<div>
+  <span class="label">Reported</span>&nbsp;
+  {% include "user/_user.html" with user=task.reporter %}
+</div>
+<div>
+  <span class="label">Assignee:</span>&nbsp;
+  {% include "user/_user.html" with user=task.assignee %}
+</div>
+<div>
+  <span class="label">Completed:</span>&nbsp;
+  {% if task.completed %}
+    <i class="fa-check"></i>
+  {% else %}
+    <i class="fa-xmark"></i>
+  {% endif %}
+</div>
+<div>
+  <span class="label">Created:</span>&nbsp;
+  <span>{{ task.created_at|date }}&nbsp;{{ task.created_at|time }}</span>
+</div>

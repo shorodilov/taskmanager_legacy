@@ -16,6 +16,9 @@
         {% endif %}
         {% if user.is_authenticated %}
           <li class="nav-item ms-2">
+            <a href="{% url "task:create" %}" class="nav-lint btn btn-outline-secondary">Create</a>
+          </li>
+          <li class="nav-item ms-2">
             <a href="{% url "user:profile" %}" class="nav-link">Profile</a>
           </li>
           <li class="nav-item ms-2">

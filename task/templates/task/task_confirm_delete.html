@@ -3,9 +3,11 @@
 {% block container %}
   <form method="post">
     {% csrf_token %}
-    <div>You are deleting {{ object.title }}?</div>
-    <div>Do you confirm?</div>
-    <button type="submit">Delete</button>
-    <a href="{% url "task:detail" object.pk %}">Cancel</a>
+    <div class="form-row">
+      <div>You are deleting {{ object.title }}?</div>
+      <div>Do you confirm?</div>
+    </div>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url "task:detail" object.pk %}" class="btn btn-secondary">Cancel</a>
   </form>
 {% endblock %}

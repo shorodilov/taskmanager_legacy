@@ -3,13 +3,18 @@
 {% block container %}
   <div class="list-group">
     {% for object in object_list %}
-      <a href="{% url  "task:detail" object.pk %}" class="list-group-item">
-        <div class="task-container" id="task-id-{{ object.pk }}">
-          <div class="task-header">
-            <h4 class="task-title">{{ object.title }}</h4>
+      <a href="{% url  "task:detail" object.pk %}" class="list-group-item task-container">
+        <div class="task-container row">
+          <div class="task-header col-12">
+            <h4>{{ object.title }}</h4>
           </div>
-          <div class="task-body">
-            <p>{{ object.description|truncatewords:10 }}</p>
+          <div class="task-body row">
+            <div class="task-data col-9">
+              {{ object.description|default_if_none:""|truncatewords:15 }}
+            </div>
+            <div class="task-meta col">
+              {% include "task/_task_meta.html" with task=object %}
+            </div>
           </div>
         </div>
       </a>
