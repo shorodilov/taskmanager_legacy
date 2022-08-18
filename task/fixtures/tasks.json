@@ -3,75 +3,75 @@
     "model": "task.TaskModel",
     "pk": 1,
     "fields": {
+      "title": "test task #1",
+      "project": 1,
+      "reporter": 3,
       "assignee": null,
       "completed": false,
       "created_at": "2022-08-02T13:35:33.799Z",
+      "updated_at": "2022-08-02T13:35:33.799Z",
       "description": "Ah, faith! Jolly roger, yer not crushing me without a fight! God, real death!",
-      "project": 1,
-      "reporter": 3,
-      "tag": [],
-      "title": "test task #1",
-      "updated_at": "2022-08-02T13:35:33.799Z"
+      "tag": []
     }
   },
   {
     "model": "task.TaskModel",
     "pk": 2,
     "fields": {
-      "assignee": 2,
+      "title": "test task #2",
+      "project": 2,
+      "assignee": 4,
+      "reporter": 3,
       "completed": false,
       "created_at": "2022-08-02T13:35:33.799Z",
+      "updated_at": "2022-08-02T13:35:33.799Z",
       "description": null,
-      "project": 2,
-      "reporter": 2,
-      "tag": [],
-      "title": "test task #2",
-      "updated_at": "2022-08-02T13:35:33.799Z"
+      "tag": []
     }
   },
   {
     "model": "task.TaskModel",
     "pk": 3,
     "fields": {
+      "title": "test task #3",
+      "project": 1,
       "assignee": 3,
+      "reporter": 2,
       "completed": false,
       "created_at": "2022-08-02T13:35:33.799Z",
+      "updated_at": "2022-08-02T13:35:33.799Z",
       "description": null,
-      "project": 1,
-      "reporter": 3,
-      "tag": [],
-      "title": "test task #3",
-      "updated_at": "2022-08-02T13:35:33.799Z"
+      "tag": []
     }
   },
   {
     "model": "task.TaskModel",
     "pk": 4,
     "fields": {
-      "assignee": 2,
-      "completed": false,
-      "created_at": "2022-08-02T13:35:33.799Z",
-      "description": "Drain strudel roughly, then mix with mint sauce and serve regularly canned in bowl.",
-      "project": 1,
-      "reporter": 2,
-      "tag": [],
       "title": "test task #4",
-      "updated_at": "2022-08-02T13:35:33.799Z"
+      "project": 1,
+      "assignee": 4,
+      "reporter": 2,
+      "completed": true,
+      "created_at": "2022-08-02T13:35:33.799Z",
+      "updated_at": "2022-08-02T13:35:33.799Z",
+      "description": "Drain strudel roughly, then mix with mint sauce and serve regularly canned in bowl.",
+      "tag": []
     }
   },
   {
     "model": "task.TaskModel",
     "pk": 5,
     "fields": {
+      "title": "test task #5",
+      "project": 1,
       "assignee": 2,
+      "reporter": 4,
       "completed": false,
       "created_at": "2022-08-02T13:35:33.799Z",
+      "updated_at": "2022-08-02T13:35:33.799Z",
       "description": "Rice can be rinseed with puréed rhubarb, also try jumbleing the stir-fry with bourbon.",
-      "project": 1,
-      "reporter": 2,
-      "tag": [],
-      "title": "test task #5",
-      "updated_at": "2022-08-02T13:35:33.799Z"
+      "tag": []
     }
   }
 ]
